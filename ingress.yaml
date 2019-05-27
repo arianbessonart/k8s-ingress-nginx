@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: nodejs-tutorial-ingress
+  name: node-app-ingress
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: \"false\"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
     - http:
         paths:
           - path: /
             backend:
-              serviceName: nodejs-tutorial-svc
+              serviceName: node-app-svc
               servicePort: 80
