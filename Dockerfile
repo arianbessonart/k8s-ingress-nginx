@@ -4,6 +4,10 @@ FROM node
 # set working directory
 WORKDIR /
 
+COPY package*.json ./
+
+RUN npm install
+
 # bundle source code
 COPY . .
 
