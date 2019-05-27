@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-tutorial
+  labels:
+    app: nodejs-tutorial
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-tutorial
+  template:
+    metadata:
+      labels:
+        app: nodejs-tutorial
+    spec:
+      containers:
+        - name: nodejs-tutorial
+          image: nodejs-tutorial:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
