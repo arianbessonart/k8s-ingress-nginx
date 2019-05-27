@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nodejs-tutorial
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: nodejs-tutorial
@@ -19,4 +19,4 @@ spec:
           image: nodejs-tutorial:latest
           imagePullPolicy: Never
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
