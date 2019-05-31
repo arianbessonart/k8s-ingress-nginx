@@ -1,21 +1,16 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: testapi
-  namespace: default
-  labels:
-    application: testapi
+  name: nginx
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      application: testapi
+  replicas: 1
   template:
     metadata:
       labels:
-        application: testapi
+        app: nginx
     spec:
       containers:
-        - name: testapi
-          image: daemonza/testapi:latest
-          imagePullPolicy: Always
+        - name: echoserver
+          image: gcr.io/k8s-ingress-nginx/node-app:v1
+          ports:
+            - containerPort: 3000

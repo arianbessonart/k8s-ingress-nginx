@@ -18,3 +18,8 @@ get minikube ip
 ```sh
 minikube ip
 ```
+
+Curl to LB on the service of the LB (deployment nginx-controller)
+```
+curl -kL -H 'Host:mysite.com' http://35.232.117.185
+```

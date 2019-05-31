@@ -1,14 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: testapi
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: demo-ingress
 spec:
   rules:
-    - http:
+    - host: mysite.com
+      http:
         paths:
-          - path: /
-            backend:
-              serviceName: testapi
-              servicePort: 8080
+          - backend:
+              serviceName: nginx
+              servicePort: 80
