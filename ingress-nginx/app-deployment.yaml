@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapi
+  namespace: default
+  labels:
+    application: testapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      application: testapi
+  template:
+    metadata:
+      labels:
+        application: testapi
+    spec:
+      containers:
+        - name: testapi
+          image: daemonza/testapi:latest
+          imagePullPolicy: Always
