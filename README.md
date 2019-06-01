@@ -4,6 +4,16 @@ build docker app
 docker build -t nodejs-tutorial .
 ```
 
+tag docker image
+```sh
+docker tag node-app gcr.io/k8s-ingress-nginx/node-app:v1
+```
+
+push docker image
+```
+gcloud docker -- push gcr.io/k8s-ingress-nginx/node-app:v1
+```
+
 enable ingress addons to minikube
 ```sh
 minikube addons enable ingress
