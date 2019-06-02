@@ -4,6 +4,16 @@ build docker app
 docker build -t nodejs-tutorial .
 ```
 
+tag docker image
+```sh
+docker tag node-app gcr.io/k8s-ingress-nginx/node-app:v1
+```
+
+push docker image
+```
+gcloud docker -- push gcr.io/k8s-ingress-nginx/node-app:v1
+```
+
 enable ingress addons to minikube
 ```sh
 minikube addons enable ingress
@@ -17,4 +27,9 @@ eval $(minikube docker-env)
 get minikube ip
 ```sh
 minikube ip
+```
+
+Curl to LB on the service of the LB (deployment nginx-controller)
+```
+curl -kL -H 'Host:mysite.com' http://35.232.117.185
 ```

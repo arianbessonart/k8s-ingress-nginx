@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: echoserver
+          image: gcr.io/k8s-ingress-nginx/node-app:v3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
