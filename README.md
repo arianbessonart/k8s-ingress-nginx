@@ -1,4 +1,5 @@
 
+build docker app
 ```sh
 docker build -t nodejs-tutorial .
 ```
