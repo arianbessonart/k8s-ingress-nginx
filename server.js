@@ -2,11 +2,21 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("root");
+  const obj = {
+    domain: req.host,
+    url: req.url,
+    hostname: req.hostname
+  };
+  res.send(obj);
 });
 
 app.get("/my-site", (req, res) => {
-  res.send("my-site");
+  const obj = {
+    domain: req.host,
+    url: req.url,
+    hostname: req.hostname
+  };
+  res.send(obj);
 });
 
 app.get("*", function(req, res) {

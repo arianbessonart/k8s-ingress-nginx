@@ -1,9 +1,12 @@
-kind: Deployment
 apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: nginx-ingress-controller
+  name: nginx-ingress-controller-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: nginx-ingress-lb
   template:
     metadata:
       labels:
