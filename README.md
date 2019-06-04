@@ -33,3 +33,13 @@ Curl to LB on the service of the LB (deployment nginx-controller)
 ```
 curl -kL -H 'Host:mysite.com' http://35.232.117.185
 ```
+
+Install helm
+```
+https://helm.sh/docs/using_helm/#installing-helm
+```
+
+Install cert-manager
+```
+http://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html
+```

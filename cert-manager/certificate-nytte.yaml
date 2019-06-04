@@ -1,0 +1,18 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: certificate-name-nytte
+spec:
+  secretName: secret-name
+  commonName: nytte.ml
+  dnsNames:
+  - nytte.ml
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: Issuer
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - nytte.ml
