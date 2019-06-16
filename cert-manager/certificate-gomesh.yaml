@@ -1,0 +1,18 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: certificate-name-gomesh
+spec:
+  secretName: secret-name
+  commonName: gomesh.ml
+  dnsNames:
+  - gomesh.ml
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: Issuer
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - gomesh.ml

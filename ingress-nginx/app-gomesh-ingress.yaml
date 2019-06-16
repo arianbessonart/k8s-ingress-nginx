@@ -18,4 +18,4 @@ spec:
   tls:
     - hosts:
       - gomesh.ml
-      secretName: certificate-name
+      secretName: certificate-name-gomesh

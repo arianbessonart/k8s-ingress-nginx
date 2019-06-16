@@ -18,4 +18,4 @@ spec:
   tls:
     - hosts:
       - nytte.ml
-      secretName: certificate-name-nytte
+      secretName: secret-name-nytte

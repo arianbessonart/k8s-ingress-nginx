@@ -1,0 +1,26 @@
+{
+  "apiVersion": "certmanager.k8s.io/v1alpha1",
+  "kind": "Certificate",
+  "metadata": {
+    "name": "{{name}}"
+  },
+  "spec": {
+    "secretName": "secret-name",
+    "commonName": "{{domain}}",
+    "dnsNames": ["{{domain}}"],
+    "issuerRef": {
+      "name": "letsencrypt-issuer",
+      "kind": "Issuer"
+    },
+    "acme": {
+      "config": [
+        {
+          "http01": {
+            "ingressClass": "nginx"
+          },
+          "domains": ["{{domain}}"]
+        }
+      ]
+    }
+  }
+}

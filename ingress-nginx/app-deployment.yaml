@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: echoserver
-          image: gcr.io/k8s-ingress-nginx/node-app:v5
+          image: gcr.io/k8s-ingress-nginx/node-app:v22
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
